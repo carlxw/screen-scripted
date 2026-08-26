@@ -43,11 +43,18 @@
   ]
 }
 
-#let montage(desc, body) = {
-  desc = upper(desc.text.trim())
+#let montage(desc, body) = context {
+  let config = sp_config.get()
+  
+  let desc_trimmed = upper(desc.text.trim())
+  let dash = if config.slug_dashes == "double" {
+    "--" 
+  } else {
+    "-"
+  }
 
   [
-    MONTAGE - #desc \
+    MONTAGE #dash #desc_trimmed \
     #body \
     END MONTAGE
   ]
