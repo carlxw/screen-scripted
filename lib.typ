@@ -1,7 +1,6 @@
 #import "/src/core/slugs.typ": (
   slugline,
   minislug,
-  timeshift,
 )
 #import "/src/core/dialogue.typ": (
   dialogue as _d, dual_dialogue,
@@ -42,7 +41,7 @@
   set page(paper: "us-letter", numbering: none)
   set par(leading: 4pt, spacing: 8pt)
 
-  // Merge defualt and user config
+  // Merge template and user config
   _validate_user_config(config)
   assert(
     config.slug_dashes == "single" or config.slug_dashes == "double",
