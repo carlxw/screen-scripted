@@ -1,0 +1,11 @@
+[package]
+name = "screenplay-scripted"
+version = "0.1.0"
+entrypoint = "lib.typ"
+categories = [ "text" ]
+disciplines = [ "film", "theater" ]
+authors = [ "carlxw <https://www.carlxw.dev>" ]
+description = "Write Oscar-formatted TV or movie scripts drafts with handly helper functions."
+repository = "TODO GITHUB"
+licnese = "MIT-0"
+keywords = ["film", "movie", "screenplay", "script", "tv", "show"]
