@@ -3,8 +3,7 @@
   minislug,
 )
 #import "/src/core/dialogue.typ": (
-  dialogue as _d, dual_dialogue,
-  dual_dialogue,
+  dialogue as _d, dual-dialogue,
   montage,
 )
 #import "/src/core/transition.typ": transition
@@ -12,16 +11,16 @@
 #import "/src/experimental/dialogue_experimental.typ": dialogue as _d_exp
 
 #import "/src/config.typ": (
-  sp_config,
-  default_config, 
+  sp_config as _sp_config,
+  default_config as _default_config,
   _validate_user_config,
 )
 #import "/src/util.typ": character
 
 #let dialogue(..args) = context {
-  let config = sp_config.get()
+  let config = _sp_config.get()
 
-  if config.dialogue_cont {
+  if config.dialogue-cont {
     _d_exp(..args)
   } else {
     _d(..args)
@@ -37,18 +36,21 @@
   config: (:),
   body,
 ) = {
-  set text(font: "Courier Prime", size: 12pt)
+  set text(
+    font: ("Courier Prime", "DejaVu Sans Mono"),
+    size: 12pt,
+  )
   set page(paper: "us-letter", numbering: none)
   set par(leading: 4pt, spacing: 8pt)
 
   // Merge template and user config
   _validate_user_config(config)
+  let merged_config = _default_config() + config
   assert(
-    config.slug_dashes == "single" or config.slug_dashes == "double",
+    merged_config.slug-dashes == "single" or merged_config.slug-dashes == "double",
     message: "Only 'single' or 'double' are accepted values"
   )
-  let merged_config = default_config() + config 
-  sp_config.update(merged_config)
+  _sp_config.update(merged_config)
 
   // Title page
   align(center + horizon)[
@@ -56,7 +58,7 @@
     #v(32pt)
     
     Written by \
-    #if type(authors) == list {
+    #if type(authors) == array {
       [ #authors.join(", ") \ ]
     } else if type(authors) == str {
       [ #authors \ ]

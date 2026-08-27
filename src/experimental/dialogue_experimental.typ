@@ -1,20 +1,19 @@
-// All of this is AI slop that just works
 #import "/src/config.typ": sp_config
 
-#let _dialogue_counter = counter("_screenplay_dialogue")
+#let _dialogue_counter = counter("_screen_scripted_dialogue")
 #let _dialogue_cue_gap = 1.2em - 8pt
 #let _dialogue_more_gap = 0.5em
 
 #let _dialogue_header_counter() = {
   counter(
-    "_screenplay_dialogue_header:"
+    "_screen_scripted_dialogue_header:"
       + str(_dialogue_counter.get().first())
   )
 }
 
 #let _dialogue_footer_counter() = {
   counter(
-    "_screenplay_dialogue_footer:"
+    "_screen_scripted_dialogue_footer:"
       + str(_dialogue_counter.get().first())
   )
 }
@@ -26,7 +25,7 @@
 
 #let _dialogue_continuation_marker = context {
   let config = sp_config.get()
-  return "(" + config.cont_str + ")" 
+  return "(" + config.cont-str + ")"
 }
 
 #let _dialogue_text(value) = {

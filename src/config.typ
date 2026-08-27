@@ -1,11 +1,11 @@
 #let sp_config = state("scripted/config", (:))
 
 #let default_config() = (
-  check_strict: false,
-  bold_slugs: true,
-  dialogue_cont: true,  // Set to "false" for manual dialogue continuation
-  slug_dashes: "double",  // "single" | "double"
-  cont_str: "CON'D",
+  check-strict: false,
+  bold-slugs: true,
+  dialogue-cont: true,  // Set to "false" for manual dialogue continuation
+  slug-dashes: "double",  // "single" | "double"
+  cont-str: "CONT'D",
 )
 
 #let _validate_user_config(input_config) = {

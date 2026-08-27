@@ -1,7 +1,11 @@
-#import "@local/screenplay-scripted:0.1.0": *
+#import "@preview/screen-scripted:0.1.0": *
 
 /*
   Season 5, episode 10 of "Family Guy"
+
+  Certain copyrighted materials appear in this work
+  without permission from the copyright holder and is
+  used under a good-faith claim of fair use
 */
 #show: scripted.with(
   title: "Stuck Behind Robert Loggia",
@@ -17,27 +21,24 @@
       Enable/disable input checking for some package functions
       Example: Sluglines should only expect "INT" or "EXT" 
     */
-    check_strict: false,
+    check-strict: false,
     /*
       Control the slugline formatting
     */
-    bold_slugs: true,
+    bold-slugs: true,
     /*
       Set to "false" for manual dialogue continuation.
-      
-      NOTE: "true" does uses a slop-implementation, but seems
-      to be working well with careful(-ish) testing
     */
-    dialogue_cont: true, 
+    dialogue-cont: true,
     /*
       Some templates use "--" whereas others use "-". Choose
       whichever version you prefer
     */
-    slug_dashes: "single",  // "single" | "double"
+    slug-dashes: "single",  // "single" | "double"
     /*
-      Some templates use "CON'D", other templates use "CON'T"
+      Customize the continued-dialogue marker if needed
     */
-    cont_str: "CON'T",
+    cont-str: "CONT'D",
   )
 )
 
@@ -60,7 +61,7 @@
   Mom? Dad? I decided I want a big party this year with all my friends. And maybe a band. Is that cool?
 ]
 
-#dual_dialogue(
+#dual-dialogue(
   dialogue[#char1][
     (mumbling) \
     Yeah, sure\... 

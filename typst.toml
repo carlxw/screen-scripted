@@ -1,18 +1,20 @@
 [package]
-name = "screenplay-scripted"
+name = "screen-scripted"
 version = "0.1.0"
 authors = [ "carlxw <https://www.carlxw.dev>" ]
-description = "Write Oscar-formatted TV or movie scripts drafts with handy helper functions."
+description = "Write screenplays with automatic dialogue continuation."
 entrypoint = "lib.typ"
+compiler = "0.14.2"
 
-categories = [ "text" ]
+categories = [ "layout" ]
 disciplines = [ "film", "theater" ]
 keywords = ["film", "movie", "screenplay", "script", "tv", "show"]
 
 repository = "https://www.github.com/carlxw/screenplay-scripted"
-licnese = "MIT-0"
+license = "MIT-0"
+exclude = [ "/img/preview.png" ]
 
 [template]
 path = "template"
-thumbnail = "screenplay-scripted.png"
+thumbnail = "img/screen-scripted.png"
 entrypoint = "example.typ"

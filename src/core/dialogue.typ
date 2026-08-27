@@ -14,8 +14,10 @@
 
   if ext != "" {
     cue += " (" + ext_trimmed + ")"
-  } else if cont {
-    cue += " ("+ config.cont_str +")"
+  }
+
+  if cont {
+    cue += " ("+ config.cont-str +")"
   }
 
   align(center)[
@@ -37,7 +39,7 @@
   ]
 }
 
-#let dual_dialogue(d1, d2) = {
+#let dual-dialogue(d1, d2) = {
   columns(2, gutter: 2in)[
     #d1 #colbreak() #d2
   ]
@@ -47,7 +49,7 @@
   let config = sp_config.get()
   
   let desc_trimmed = upper(desc.text.trim())
-  let dash = if config.slug_dashes == "double" {
+  let dash = if config.slug-dashes == "double" {
     "--" 
   } else {
     "-"
